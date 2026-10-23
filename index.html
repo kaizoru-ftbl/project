@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magic Mobile — Buy, sell and repair phones in Arera Colony, Bhopal</title>
+<meta name="description" content="Magic Mobile is a phone shop in Arera Colony, Bhopal. New and refurbished phones, accessories, trade-ins and repairs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">Magic Mobile</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#repairs">Repairs</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit</a>
+      <button class="cart-btn" id="cartBtn" aria-expanded="false" aria-controls="cartPanel">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="top">
+
+  <section class="hero container">
+    <div class="hero-copy">
+      <h1><span class="w" style="--i:0">Phones</span> <span class="w" style="--i:1">bought,</span> <span class="w" style="--i:2">sold</span> <span class="w" style="--i:3">and</span> <span class="w" style="--i:4">fixed</span> <span class="w" style="--i:5">in</span> <span class="w" style="--i:6">Arera</span> <span class="w" style="--i:7">Colony.</span></h1>
+      <p class="lede">Magic Mobile is a neighbourhood phone shop in Bhopal. New and refurbished phones, accessories, trade-ins, and repairs — most of them done the same day.</p>
+      <p class="hero-meta"><span class="status" data-store-status>Checking hours…</span> E-7, Arera Colony, Bhopal</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-solid">Shop phones</a>
+        <a href="#repairs" class="btn btn-line">Estimate a repair</a>
+      </div>
+    </div>
+    <div class="hero-visual" id="heroVisual">
+      <div class="phone" id="phone" aria-live="polite">
+        <div class="island"></div>
+        <div class="screen" id="screen">
+          <p class="s-big" id="sBig"></p>
+          <p class="s-sub" id="sSub"></p>
+          <a class="s-link" id="sLink" href="#shop"></a>
+        </div>
+      </div>
+      <div class="tabs" id="heroTabs" role="group" aria-label="What we do">
+        <button data-tab="buy" class="active" aria-pressed="true">Buy</button>
+        <button data-tab="sell" aria-pressed="false">Sell</button>
+        <button data-tab="repair" aria-pressed="false">Repair</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>What we do</h2>
+    <div class="section-body">
+      <ul class="rows">
+        <li>
+          <h3>Buy</h3>
+          <p>New phones, tested refurbished phones with a 90-day warranty, and the accessories to go with them.</p>
+          <a href="#shop">Browse the shop</a>
+        </li>
+        <li>
+          <h3>Sell</h3>
+          <p>Bring in your old phone or send us the details, and we'll give you a quote for a trade-in or outright sale.</p>
+          <a href="#visit">Visit or call us</a>
+        </li>
+        <li>
+          <h3>Repair</h3>
+          <p>Cracked screens, tired batteries, charging ports, water damage. Most repairs are finished the same day.</p>
+          <a href="#repairs">Estimate a repair</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="band">
+  <section class="container section" id="repairs">
+    <h2>Repair estimate</h2>
+    <div class="section-body">
+      <p class="intro">Choose your phone type and the problem for an indicative price. We confirm the final cost once we've inspected the phone.</p>
+      <fieldset class="chips"><legend>Phone</legend><label><input type="radio" name="device" value="entry"><span>Entry-level</span></label><label><input type="radio" name="device" value="mid" checked><span>Mid-range</span></label><label><input type="radio" name="device" value="flagship"><span>Flagship</span></label><label><input type="radio" name="device" value="foldable"><span>Foldable</span></label></fieldset>
+      <fieldset class="chips"><legend>Problem</legend><label><input type="radio" name="issue" value="screen" checked><span>Cracked screen</span></label><label><input type="radio" name="issue" value="battery"><span>Battery</span></label><label><input type="radio" name="issue" value="charging"><span>Charging port</span></label><label><input type="radio" name="issue" value="water"><span>Water damage</span></label><label><input type="radio" name="issue" value="camera"><span>Camera</span></label></fieldset>
+      <p class="estimate" id="estimateValue" aria-live="polite">₹3,000 – ₹5,000</p>
+      <p class="estimate-note" id="estimateNote"></p>
+      <a href="#visit" class="btn btn-light" id="bookRepair">Book this repair</a>
+    </div>
+  </section>
+  </div>
+
+  <section class="container section" id="shop">
+    <h2>Shop</h2>
+    <div class="section-body">
+      <div class="toolbar">
+        <input type="search" id="searchInput" placeholder="Search products" aria-label="Search products">
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price, low to high</option>
+          <option value="price-desc">Price, high to low</option>
+          <option value="name">Name, A to Z</option>
+        </select>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Category">
+        <button class="active" data-filter="all" aria-pressed="true">All</button>
+        <button data-filter="phones" aria-pressed="false">Phones</button>
+        <button data-filter="refurbished" aria-pressed="false">Refurbished</button>
+        <button data-filter="accessories" aria-pressed="false">Accessories</button>
+      </div>
+      <ul class="products" id="productList"></ul>
+      <p class="empty" id="emptyState" hidden>Nothing matches that search. Try another word or clear the filter.</p>
+      <p class="fine">All prices in Indian rupees (₹), inclusive of GST.</p>
+    </div>
+  </section>
+
+  <section class="container section" id="about">
+    <h2>About</h2>
+    <div class="section-body">
+      <p class="statement">Finding the right phone shouldn't be stressful. Whether it's a flagship, a reliable everyday phone, or the right case, we're here to make it easy.</p>
+
+      <h3 class="sub">Our story</h3>
+      <dl class="timeline">
+        <div><dt>2005</dt><dd>Magic Mobile opens with one goal: make mobile technology affordable and easy to understand for everyone.</dd></div>
+        <div><dt>Since then</dt><dd>A small local shop grows into a place people in Bhopal trust for advice, not just products.</dd></div>
+        <div><dt>Today</dt><dd>We're still local and still hands-on. The best tech advice comes from a real conversation, so we keep the team on the shop floor.</dd></div>
+      </dl>
+
+      <h3 class="sub">Why people come back</h3>
+      <dl class="points">
+        <div><dt>Genuine devices</dt><dd>We source directly from manufacturers so every phone we sell is authentic.</dd></div>
+        <div><dt>Real help</dt><dd>We help you pick a phone, move your data across, and sort out problems afterwards.</dd></div>
+        <div><dt>Fair pricing</dt><dd>Competitive prices and financing options, so you get value for your money.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="container section" id="visit">
+    <h2>Visit</h2>
+    <div class="section-body">
+      <div class="visit-grid">
+        <div>
+          <p class="status" data-store-status>Checking hours…</p>
+          <address>
+            Shop No 23 11, Magic Mobile,<br>
+            No Market, E-7, Arera Colony,<br>
+            Bhopal, Madhya Pradesh 462016
+          </address>
+          <p><a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Magic+Mobile+E-7+Arera+Colony+Bhopal+462016">Get directions</a></p>
+          <p class="hours"><b>Hours</b><br>Every day, 11 am – 12 am</p>
+          <p><b>Phone</b><br><a href="tel:+910000000000" id="phoneLink">+91 00000 00000</a></p>
+          <p><b>Email</b><br><a href="mailto:hello@magicmobile.example" id="emailLink">hello@magicmobile.example</a></p>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Shop+No+23+11%2C+Magic+Mobile%2C+No+Market%2C+E-7%2C+Arera+Colony%2C+Bhopal%2C+Madhya+Pradesh+462016&output=embed" loading="lazy" title="Map showing Magic Mobile in Arera Colony, Bhopal" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="container">© 2026 Magic Mobile, Arera Colony, Bhopal</div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Cart">
+  <div class="cart-head">
+    <h3>Your cart</h3>
+    <button id="cartClose" aria-label="Close cart">Close</button>
+  </div>
+  <ul class="cart-items" id="cartItems"></ul>
+  <div class="cart-foot">
+    <p class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></p>
+    <button class="btn btn-solid" id="checkoutBtn">Reserve in store</button>
+    <p class="fine">Nothing is charged online. We'll hold these items for you and confirm availability.</p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
